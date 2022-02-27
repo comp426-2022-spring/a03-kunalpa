@@ -4,8 +4,7 @@
   "description": "Making an API extending from functions developed in a02",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js --port=5555",
-    "start": "node server.js"
+    "test": "node server.js --port=5555"
   },
   "repository": {
     "type": "git",
@@ -16,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/comp426-2022-spring/a03-kunalpa/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/comp426-2022-spring/a03-kunalpa#readme",
   "dependencies": {
     "express": "^4.17.3",
