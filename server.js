@@ -1,4 +1,4 @@
-import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs'
+import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs';
 import { createRequire } from 'module';
 
 // Require Express.js
@@ -8,7 +8,7 @@ const app = express()
 
 const argv = require('minimist')(process.argv.slice(2))
 argv['port']
-const HTTP_PORT = argv.port || process.env.PORT || 5000
+const port = argv['port'] || process.env.PORT || 5000
 
 // Start an app server
 const server = app.listen(port, () => { 
