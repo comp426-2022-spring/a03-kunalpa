@@ -1,4 +1,4 @@
-import * as coins from './modules/coin.mjs'
+import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs'
 
 // Require Express.js
 const express = require('express')
@@ -9,40 +9,60 @@ argv['port']
 const HTTP_PORT = argv.port || process.env.PORT || 5000
 
 // Start an app server
-const server = app.listen(HTTP_PORT, () => {
-    console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
+const server = app.listen(port, () => { 
+    console.log('App listening on port %PORT%'.replace('%PORT%',port))
 });
 
-app.get('/app/', (req, res) => {
-    // Responds with status 200
+app.get('/app/', (req, res) => { // Define Checkpoint
+    // Respond with status 200
     res.statusCode = 200;
-    // Responds with status message "OK"
+    // Respond with status message "OK"
     res.statusMessage = 'OK';
-    res.writeHead(res.statusCode, {
-        'Content-Type' : 'text/plain'
-    });
-    res.end(res.statusCode + ' ' + res.statusMessage);
+    res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
+    res.end(res.statusCode+ ' ' +res.statusMessage)
 });
 
-app.get('/app/flip/', (req, res) => {
-    res.json({ flip: coinFlip() })
+app.get('/app/flip/', (req, res) => { // Flip a coin and return the result
+    // Respond with status 200
+    res.statusCode = 200;
+    // Flip a coin using the coinFlip() function
+    const result = coinFlip();
+    // Send json response based of heads or tails from resulting coin flip
+    if (result == 'heads') {
+        res.json({"flip":"heads"});
+    } 
+    if (result == 'tails') {
+        res.json({"flip":"tails"});
+    } 
 });
 
-app.get('/app/flips/:number', (req, res) => {
-    const number = req.params.number || 1
-
-    const flips = new Array()
-    for (var i = 0; i < number; i++) {
-        flips.push(coinFlip())
-    }
-    res.json({raw: flips, summary:countFlips(flips)})
+app.get('/app/flips/:number', (req, res) => { // Flip a coin multiple times and return results
+    // Respond with status 200
+    res.statusCode = 200;
+    // Set up variable for number of coin flips, array of results, and counted results
+	const flips = req.params.number;
+    const results = coinFlips(flips);
+    const counted = countFlips(coinFlips(flips));
+	// Flip coin flips n times using the coinFlips function, send json response of results
+    res.json({"raw":results, "summary":counted});
+    // send json response of results
 });
 
-app.get('/app/flip/call/:call(heads|tails)', (req, res) => {
-    res.status(200).json(coins.flipACoin(req.params.call))
-})
+app.get('/app/flip/call/heads', (req, res) => { // Flip a coin, call heads, compare result
+    // Respond with status 200
+    res.statusCode = 200;
+       // Use flipACoin function, send json response of results
+    res.json(flipACoin('heads'));
+});
 
-// Default response for any other request
+app.get('/app/flip/call/tails', (req, res) => { // Flip a coin, call heads, compare result
+    // Respond with status 200
+    res.statusCode = 200;
+    // Use flipACoin function, send json response of results
+    res.json(flipACoin('tails'));
+});
+
 app.use(function(req, res){
+    // Default response for any other request
     res.status(404).send('404 NOT FOUND')
 });
