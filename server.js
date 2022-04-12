@@ -8,8 +8,8 @@ const app = express()
 
 const argv = require('minimist')(process.argv.slice(2))
 argv['port']
-const port = argv['port'] || process.env.PORT || 5000
-
+const port = argv['port'] || process.env.PORT || 5000 
+ 
 // Start an app server
 const server = app.listen(port, () => { 
     console.log('App listening on port %PORT%'.replace('%PORT%',port)) 
