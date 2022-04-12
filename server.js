@@ -15,7 +15,7 @@ const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',port)) 
 });
 
-app.get('/app/', (req, res) => { // Define Checkpoint
+app.get('/app/', (req, res) => { // Define Checkpoint 
     // Respond with status 200
     res.statusCode = 200; 
     // Respond with status message "OK"
