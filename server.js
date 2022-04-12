@@ -21,7 +21,7 @@ app.get('/app/', (req, res) => { // Define Checkpoint
     // Respond with status message "OK"
     res.statusMessage = 'OK';
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' }); 
-    res.end(res.statusCode+ ' ' +res.statusMessage)
+    res.end(res.statusCode+ ' ' +res.statusMessage) 
 });
 
 app.get('/app/flip/', (req, res) => { // Flip a coin and return the result
