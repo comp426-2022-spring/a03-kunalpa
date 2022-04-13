@@ -39,7 +39,7 @@ app.get('/app/flip/', (req, res) => {  // Flip a coin and return the result
 }); 
 
 app.get('/app/flips/:number', (req, res) => {  // Flip a coin multiple times and return results 
-    // Respond with status 200 
+    // Respond with status 200
     res.statusCode = 200; 
     // Set up variable for number of coin flips, array of results, and counted results
 	const flips = req.params.number; 
