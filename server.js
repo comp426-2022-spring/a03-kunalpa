@@ -56,7 +56,7 @@ app.get('/app/flip/call/heads', (req, res) => {  // Flip a coin, call heads, com
        // Use flipACoin function, send json response of results
     res.json(flipACoin('heads'));
 });
-
+ 
 app.get('/app/flip/call/tails', (req, res) => { // Flip a coin, call heads, compare result
     // Respond with status 200
     res.statusCode = 200;
