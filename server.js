@@ -33,6 +33,7 @@ app.get('/app/flip/', (req, res) => {  // Flip a coin and return the result
     if (result == 'heads') { 
         res.json({"flip":"heads"}); 
     } 
+    
     if (result == 'tails') { 
         res.json({"flip":"tails"}); 
     } 
