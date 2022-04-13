@@ -53,7 +53,7 @@ app.get('/app/flips/:number', (req, res) => {  // Flip a coin multiple times and
 app.get('/app/flip/call/heads', (req, res) => {  // Flip a coin, call heads, compare result
     // Respond with status 200 
     res.statusCode = 200; 
-       // Use flipACoin function, send json response of results 
+    // Use flipACoin function, send json response of results 
     res.json(flipACoin('heads'));
 });
  
