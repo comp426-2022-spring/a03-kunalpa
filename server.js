@@ -13,7 +13,7 @@ const port = argv['port'] || process.env.PORT || 5000
 // Start an app server
 const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',port))
-});  
+}); 
 
 app.get('/app/', (req, res) => {  // Define Checkpoint 
     // Respond with status 200  
@@ -21,7 +21,7 @@ app.get('/app/', (req, res) => {  // Define Checkpoint
     // Respond with status message "OK" 
     res.statusMessage = 'OK';
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' }); 
-    
+
     res.end(res.statusCode+ ' ' +res.statusMessage)
 });
 
