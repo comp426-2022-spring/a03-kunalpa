@@ -29,7 +29,7 @@ app.get('/app/flip/', (req, res) => {  // Flip a coin and return the result
     res.statusCode = 200; 
 
     // Flip a coin using the coinFlip() function 
-    const result = coinFlip();
+    const result = coinFlip(); 
 
     // Send json response based of heads or tails from resulting coin flip
     if (result == 'heads') { 
