@@ -23,13 +23,14 @@ app.get('/app/', (req, res) => { // Define Checkpoint
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' }); 
     res.end(res.statusCode+ ' ' +res.statusMessage)
 });
+
 app.get('/app/flip/', (req, res) => {  // Flip a coin and return the result 
     // Respond with status 200 
     res.statusCode = 200; 
 
     // Flip a coin using the coinFlip() function 
     const result = coinFlip();
-    
+
     // Send json response based of heads or tails from resulting coin flip
     if (result == 'heads') { 
         res.json({"flip":"heads"}); 
