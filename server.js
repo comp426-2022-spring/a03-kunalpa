@@ -4,7 +4,7 @@ import { createRequire } from 'module';
 // Require Express.js
 const require = createRequire(import.meta.url)
 const express = require('express') 
-const app = express() 
+const app = express();
 
 const argv = require('minimist')(process.argv.slice(2)) 
 argv['port']
