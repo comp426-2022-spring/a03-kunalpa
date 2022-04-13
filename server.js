@@ -62,8 +62,8 @@ app.get('/app/flip/call/tails', (req, res) => { // Flip a coin, call heads, comp
     res.statusCode = 200;
     // Use flipACoin function, send json response of results
     res.json(flipACoin('tails')); 
-});
- 
+}); 
+
 app.use(function(req, res){
     // Default response for any other request
     res.status(404).send('404 NOT FOUND') 
