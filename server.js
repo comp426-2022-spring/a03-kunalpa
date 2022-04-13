@@ -1,4 +1,4 @@
-import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs'; 
+import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs';
 import { createRequire } from 'module'; 
  
 // require express.js 
