@@ -46,7 +46,7 @@ app.get('/app/flips/:number', (req, res) => {  // Flip a coin multiple times and
     const results = coinFlips(flips); 
     const counted = countFlips(coinFlips(flips));
 	// Flip coin flips n times using the coinFlips function, send json response of results
-    res.json({"raw":results, "summary":counted}); 
+    res.json({"raw":results, "summary":counted});
     // send json response of results 
 }); 
  
