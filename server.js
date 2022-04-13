@@ -30,7 +30,7 @@ app.get('/app/flip/', (req, res) => { // Flip a coin and return the result
     // Flip a coin using the coinFlip() function
     const result = coinFlip();
     // Send json response based of heads or tails from resulting coin flip
-    if (result == 'heads') {
+    if (result == 'heads') { 
         res.json({"flip":"heads"});
     } 
     if (result == 'tails') {
