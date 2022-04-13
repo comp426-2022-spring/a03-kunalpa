@@ -11,8 +11,8 @@ argv['port']
 const port = argv['port'] || process.env.PORT || 5000 
  
 // Start an app server
-const server = app.listen(port, () => {  
-    console.log('App listening on port %PORT%'.replace('%PORT%',port)) 
+const server = app.listen(port, () => {
+    console.log('App listening on port %PORT%'.replace('%PORT%',port))
 }); 
 
 app.get('/app/', (req, res) => { // Define Checkpoint 
