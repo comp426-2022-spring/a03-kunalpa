@@ -42,12 +42,12 @@ app.get('/app/flips/:number', (req, res) => {  // Flip a coin multiple times and
     // Respond with status 200
     res.statusCode = 200; 
     // Set up variable for number of coin flips, array of results, and counted results
-	const flips = req.params.number; 
+	const flips = req.params.number;
     const results = coinFlips(flips); 
     const counted = countFlips(coinFlips(flips));
 	// Flip coin flips n times using the coinFlips function, send json response of results
     res.json({"raw":results, "summary":counted});
-    // send json response of results
+    // send json response of results 
 }); 
  
 app.get('/app/flip/call/heads', (req, res) => {  // Flip a coin, call heads, compare result
