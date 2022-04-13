@@ -19,8 +19,8 @@ app.get('/app/', (req, res) => {  // Define Checkpoint
     // Respond with status 200  
     res.statusCode = 200;
     // Respond with status message "OK" 
-    res.statusMessage = 'OK'; 
-    res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
+    res.statusMessage = 'OK';
+    res.writeHead(res.statusCode, { 'Content-Type' : 'text/plain' });
     res.end(res.statusCode+ ' ' +res.statusMessage) 
 }); 
 
