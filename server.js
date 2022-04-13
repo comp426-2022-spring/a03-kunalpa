@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url)
 const express = require('express') 
 const app = express() 
 
-const argv =require('minimist')(process.argv.slice(2))
+const argv =require('minimist')(process.argv.slice(2)) 
 argv['port'] 
 const port = argv['port'] || process.env.PORT || 5000
  
